@@ -1,0 +1,7 @@
+.idea
+__pycache__
+docker/nginx/certs/local*
+!docker/nginx/certs/local/.gitkeep
+!data/.gitkeep
+docker-compose.local.yml
+docker-compose.prod.yml

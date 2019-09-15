@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  nginx-proxy:
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./docker/nginx/certs/local:/etc/nginx/certs"
+
+  screenshot-server:
+    environment:
+      - VIRTUAL_HOST=XXXXXXXX
+      - SERVER_NAME=XXXXXXXX
+      - FLASK_ENV=development
+      - UPLOAD_FOLDER=/tmp
+      - SECRET=TEST
+    volumes:
+      - ./screenshot-server/app:/app
